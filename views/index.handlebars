@@ -1,0 +1,72 @@
+<div class="container">
+
+	
+		
+			
+		
+	<!-- end first row -->
+
+
+
+	
+		<div class="row top">
+			<h1 class="text-center">McBurger Doink</h1>
+		</div>
+	
+
+
+
+	<div class="row">
+		<div class="col-md-4 text-right text-white">
+			<h3>Served</h3>
+			<ul>
+				{{#each burgers}}
+					{{#unless this.devoured}}
+						<li>
+							<h5>{{this.id}}. {{this.burger_name}}
+								<form action='burgers/updateOne/{{this.id}}?_method=PUT' method='POST'>
+									<input type='hidden' name='devoured' value='true'>
+									<button type='submit' class="text-center btn animated-button thar-one right">Devour it</button>
+								</form>
+							</h5>
+						</li>
+					{{/unless}}
+				{{/each}}
+			</ul>
+		</div><!-- end column 1 -->
+
+
+		<div class="col-md-4">
+			<form class="create-update-form" action="burgers/insertOne" method="POST">
+				<div class="form-group">
+					<!-- <label for="bg">Burger Name:</label> -->
+					<textarea type="text" name="name"></textarea><br>
+					<button class="text-center btn animated-button thar-one" type="submit">Order Burger</button>
+					<h5 class="text-center">Enter your order.</h5>
+				</div>
+			</form>
+			<div class="col-md-12 text-center" id="burgerMoji">🍔</div>
+			<div class="col-md-12 text-center" id="burgerMoji">🍟</div>
+		</div>
+
+
+		<div class="col-md-4">
+			<h3>Devoured</h3>
+			<ul>
+				{{#each burgers}}
+					{{#if this.devoured}}
+						<li>
+							<h5>{{this.id}}. {{this.burger_name}}</h5>
+						</li>
+					{{/if}}
+				{{/each}}
+			</ul>
+		</div><!-- end column 2 -->
+
+	</div><!-- end third row -->
+
+	
+	
+
+<!-- end bootstrap container -->
+</div>
