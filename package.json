@@ -26,6 +26,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
+    "growl": "^1.10.5",
     "heroku": "^0.2.0",
     "method-override": "^2.3.9",
     "mysql": "^2.15.0"
